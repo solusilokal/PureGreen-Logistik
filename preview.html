@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureGreen Logistik - Preview Langsung</title>
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #f1f5f9;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="p-0 sm:py-8 flex justify-center bg-slate-100 min-h-screen">
+
+  <main class="w-full max-w-[480px] relative shadow-2xl bg-white min-h-screen overflow-hidden pb-32 sm:rounded-3xl border border-slate-200">
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative w-full min-h-[92dvh] flex flex-col justify-end pb-12 px-6">
+      <button onclick="toggleShareModal(true)" aria-label="Share this page" class="absolute top-6 right-6 z-20 p-3 bg-white/80 backdrop-blur-md rounded-full border border-slate-200 text-slate-700 hover:bg-white transition-all shadow-sm cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </button>
+
+      <div class="absolute inset-0 z-0 bg-white">
+        <img src="./hero-bg.jpg" alt="PureGreen Logistik" class="w-full h-full object-cover object-center opacity-40 mix-blend-multiply" />
+        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center mt-20">
+        <div class="w-28 h-28 rounded-3xl p-2 bg-white/95 backdrop-blur-md mb-6 shadow-xl border border-[#4CAF50]/30 overflow-hidden flex items-center justify-center">
+          <img src="./logo.png" alt="PureGreen Logistik" class="w-full h-full object-contain" />
+        </div>
+
+        <h1 class="text-4xl font-extrabold text-[#4CAF50] mb-2 leading-tight tracking-tight drop-shadow-sm">
+          PUREGREEN
+        </h1>
+        <h2 class="text-2xl font-bold text-[#1E5641] mb-2 tracking-widest drop-shadow-sm -mt-3">
+          LOGISTIK
+        </h2>
+        <p class="text-[#4CAF50] font-bold mb-4 tracking-wider text-sm uppercase mt-2">Premium Hydroponic Distributor</p>
+        <p class="text-slate-600 font-medium text-sm leading-relaxed mb-8 max-w-[95%]">
+          Penyedia sayuran hidroponik segar, bebas pestisida, dan berkualitas tinggi. Solusi pasokan sayur harian yang andal untuk kebutuhan bisnis HORECA (Hotel, Restoran, Cafe) dan Supermarket Anda.
+        </p>
+
+        <div class="flex flex-col gap-3 w-full max-w-sm mb-8">
+          <div class="grid grid-cols-2 gap-3 w-full">
+            <a href="https://www.instagram.com/solusilokal.id" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 py-3 rounded-2xl bg-white/80 backdrop-blur-md border border-[#4CAF50]/30 hover:bg-white transition-all text-slate-700 shadow-sm text-sm font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@solusilokal.id" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 py-3 rounded-2xl bg-white/80 backdrop-blur-md border border-[#4CAF50]/30 hover:bg-white transition-all text-slate-700 shadow-sm text-sm font-medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-[#4CAF50]">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+              TikTok
+            </a>
+          </div>
+          <button onclick="scrollToEl('location')" class="flex items-center justify-center gap-2 py-3 rounded-2xl bg-white/80 backdrop-blur-md border border-[#1E5641]/30 hover:bg-white transition-all text-slate-700 text-sm font-medium shadow-[0_0_15px_rgba(30,86,65,0.05)] cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Lokasi Farm & Distribusi
+          </button>
+        </div>
+
+        <button onclick="scrollToEl('booking-form')" class="group relative flex items-center justify-center gap-3 w-full max-w-sm py-4 bg-[#4CAF50] text-white rounded-2xl font-bold text-sm uppercase tracking-wider hover:bg-[#3d8c40] transition-all shadow-[0_8px_20px_rgba(76,175,80,0.3)] cursor-pointer">
+          Mulai Berlangganan
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-y-1 transition-transform"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-12 px-6 bg-white">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Tentang Kami</h2>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 text-emerald-100/50 pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed relative z-10 mb-4 font-medium">
+          PureGreen Logistik hadir menjembatani jarak antara kebun hidroponik modern dengan dapur komersial Anda. Kami percaya bahwa sayuran segar adalah fondasi dari setiap sajian lezat.
+        </p>
+        <p class="text-slate-600 text-sm leading-relaxed relative z-10 font-medium">
+          Dengan kontrol kualitas yang ketat, air bernutrisi optimal, dan pemanenan di waktu yang tepat, kami memastikan setiap helai daun yang sampai ke tangan Anda masih dalam kondisi prima, renyah, dan kaya nutrisi.
+        </p>
+      </div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section id="history" class="pb-12 px-6 bg-white">
+      <div class="flex items-center gap-3 mt-4 mb-6">
+        <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Perjalanan Kami</h2>
+      </div>
+      <div class="pl-4 border-l-2 border-emerald-200 flex flex-col gap-8 ml-2">
+        <div class="relative">
+          <div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
+          <h4 class="text-slate-800 font-bold text-sm mb-1">2020 - Green House Pertama</h4>
+          <p class="text-slate-500 text-sm leading-relaxed">Berawal dari green house 200m² dengan sistem DFT, fokus memenuhi permintaan pasar lokal dan komunitas.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
+          <h4 class="text-slate-800 font-bold text-sm mb-1">2022 - Skala Komersial B2B</h4>
+          <p class="text-slate-500 text-sm leading-relaxed">Ekspansi lahan hingga 1000m² dan meresmikan layanan khusus suplai restoran dengan komitmen pasokan harian.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-[#4CAF50] ring-4 ring-white"></div>
+          <h4 class="text-slate-800 font-bold text-sm mb-1">2024 - Integrasi Cold Chain</h4>
+          <p class="text-slate-500 text-sm leading-relaxed">Meluncurkan armada truk pendingin sendiri untuk memastikan sayuran tetap segar 100% sampai ke lokasi pelanggan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section id="catalog" class="py-12 bg-slate-50 border-y border-slate-200 overflow-hidden">
+      <div class="px-6 mb-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-2 text-slate-900">Katalog Sayuran</h2>
+        <p class="text-[#4CAF50] text-sm font-medium">Panen segar setiap hari, siap antar ke lokasi Anda.</p>
+      </div>
+      
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 px-6 pb-8 no-scrollbar">
+        <!-- Item 1 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="./catalog-romaine.webp" alt="Selada Romaine" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-90" />
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4CAF50] shadow-sm border border-slate-100">
+              Premium Salad
+            </div>
+          </div>
+          <div class="p-5 flex flex-col gap-4">
+            <h3 class="font-bold text-lg text-slate-800">Selada Romaine</h3>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl border border-slate-100">
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Panen Harian</span>
+              </div>
+              <div class="w-px h-8 bg-slate-200"></div>
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Tahan 7-10 Hari</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="./catalog-pakcoy.webp" alt="Pakcoy Green" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-90" />
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4CAF50] shadow-sm border border-slate-100">
+              Sayur Masak
+            </div>
+          </div>
+          <div class="p-5 flex flex-col gap-4">
+            <h3 class="font-bold text-lg text-slate-800">Pakcoy Green</h3>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl border border-slate-100">
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Panen Harian</span>
+              </div>
+              <div class="w-px h-8 bg-slate-200"></div>
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Tahan 5-7 Hari</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="./catalog-selada-keriting.webp" alt="Selada Kriting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-90" />
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4CAF50] shadow-sm border border-slate-100">
+              Garnish & Burger
+            </div>
+          </div>
+          <div class="p-5 flex flex-col gap-4">
+            <h3 class="font-bold text-lg text-slate-800">Selada Kriting</h3>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl border border-slate-100">
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Panen Harian</span>
+              </div>
+              <div class="w-px h-8 bg-slate-200"></div>
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Tahan 7 Hari</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <div class="h-44 overflow-hidden relative">
+            <img src="./catalog-bayam-brazil.webp" alt="Bayam Brazil" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 opacity-90" />
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4CAF50] shadow-sm border border-slate-100">
+              Superfood
+            </div>
+          </div>
+          <div class="p-5 flex flex-col gap-4">
+            <h3 class="font-bold text-lg text-slate-800">Bayam Brazil</h3>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl border border-slate-100">
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Panen Mingguan</span>
+              </div>
+              <div class="w-px h-8 bg-slate-200"></div>
+              <div class="flex flex-col gap-1.5 items-center w-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E5641" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+                <span class="text-[11px] font-semibold text-slate-500 text-center">Tahan 5 Hari</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-12 px-6 bg-white">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Estimasi Harga Grosir</h2>
+      </div>
+      <p class="text-slate-500 text-sm mb-6 font-medium">Penawaran harga terbaik untuk pembelian rutin dan skala besar. Harga dapat menyesuaikan musim.</p>
+      
+      <div class="flex flex-col gap-3">
+        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm gap-2 hover:border-[#4CAF50] transition-colors">
+          <div class="flex flex-col gap-1.5 flex-1">
+            <span class="text-[14px] font-bold text-slate-800">Paket Starter (Resto Kecil)</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] bg-emerald-50 w-fit px-2 py-0.5 rounded-md border border-emerald-100">Campur (Max 3 Jenis)</span>
+          </div>
+          <div class="text-[12px] font-bold bg-[#1E5641] py-2.5 rounded-xl text-white shadow-sm w-[135px] text-center shrink-0 border border-[#1E5641]/50">
+            Rp 150rb / 10kg
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm gap-2 hover:border-[#4CAF50] transition-colors">
+          <div class="flex flex-col gap-1.5 flex-1">
+            <span class="text-[14px] font-bold text-slate-800">Paket Reguler (Cafe/Catering)</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] bg-emerald-50 w-fit px-2 py-0.5 rounded-md border border-emerald-100">Campur Bebas</span>
+          </div>
+          <div class="text-[12px] font-bold bg-[#1E5641] py-2.5 rounded-xl text-white shadow-sm w-[135px] text-center shrink-0 border border-[#1E5641]/50">
+            Rp 350rb / 25kg
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm gap-2 hover:border-[#4CAF50] transition-colors">
+          <div class="flex flex-col gap-1.5 flex-1">
+            <span class="text-[14px] font-bold text-slate-800">Paket Enterprise (Supermarket)</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] bg-emerald-50 w-fit px-2 py-0.5 rounded-md border border-emerald-100">Sesuai Kontrak</span>
+          </div>
+          <div class="text-[12px] font-bold bg-[#1E5641] py-2.5 rounded-xl text-white shadow-sm w-[135px] text-center shrink-0 border border-[#1E5641]/50">
+            Rp 650rb / 50kg
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm gap-2 hover:border-[#4CAF50] transition-colors">
+          <div class="flex flex-col gap-1.5 flex-1">
+            <span class="text-[14px] font-bold text-slate-800">Permintaan Khusus / Eceran</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] bg-emerald-50 w-fit px-2 py-0.5 rounded-md border border-emerald-100">Semua Jenis Sayur</span>
+          </div>
+          <div class="text-[12px] font-bold bg-[#1E5641] py-2.5 rounded-xl text-white shadow-sm w-[135px] text-center shrink-0 border border-[#1E5641]/50">
+            Hubungi Sales
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="location" class="py-12 px-6 bg-slate-50 border-y border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Pusat Distribusi</h2>
+      </div>
+      
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+        <h3 class="font-bold text-slate-800 text-[16px] mb-2">PureGreen Main Farm & Hub</h3>
+        <p class="text-slate-600 text-sm mb-6 leading-relaxed">Kawasan Pertanian Modern, Jl. Agrikultur No. 12, Palangka Raya, Kalimantan Tengah.</p>
+        <a 
+          href="https://www.google.com/maps/place/Palangka+Raya,+Kota+Palangka+Raya,+Kalimantan+Tengah/" 
+          target="_blank" 
+          rel="noreferrer"
+          class="flex items-center justify-center gap-2 w-full py-3.5 bg-emerald-50 text-[#1E5641] font-bold text-sm rounded-xl hover:bg-emerald-100 transition-colors border border-emerald-200"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          Buka Arah di Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-12 px-6 bg-white">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Tanya Jawab</h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- FAQ 1 -->
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden faq-item">
+          <button onclick="toggleFaq(0)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none hover:bg-slate-100 transition-colors cursor-pointer">
+            <span class="font-bold text-[14px] text-slate-800 pr-4">Apakah ada minimum order untuk pengiriman?</span>
+            <svg id="faq-chevron-0" class="text-[#4CAF50] shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="faq-body-0" class="hidden transition-all duration-300 ease-in-out">
+            <p class="p-5 pt-0 text-slate-600 text-[13px] font-medium leading-relaxed border-t border-slate-200 mt-2">
+              Ya, untuk gratis ongkos kirim di dalam kota Palangka Raya, minimum pemesanan adalah 10kg. Untuk pemesanan di bawah itu, dapat diambil langsung ke lokasi kami atau dikenakan biaya kirim flat.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden faq-item">
+          <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none hover:bg-slate-100 transition-colors cursor-pointer">
+            <span class="font-bold text-[14px] text-slate-800 pr-4">Apakah sayuran PureGreen benar-benar bebas pestisida?</span>
+            <svg id="faq-chevron-1" class="text-[#4CAF50] shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="faq-body-1" class="hidden transition-all duration-300 ease-in-out">
+            <p class="p-5 pt-0 text-slate-600 text-[13px] font-medium leading-relaxed border-t border-slate-200 mt-2">
+              100% bebas pestisida kimia. Kami menggunakan sistem hidroponik tertutup di dalam green house dan mengandalkan pest control alami serta nutrisi AB Mix standar food-grade.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden faq-item">
+          <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none hover:bg-slate-100 transition-colors cursor-pointer">
+            <span class="font-bold text-[14px] text-slate-800 pr-4">Bagaimana sistem pembayaran untuk mitra B2B?</span>
+            <svg id="faq-chevron-2" class="text-[#4CAF50] shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="faq-body-2" class="hidden transition-all duration-300 ease-in-out">
+            <p class="p-5 pt-0 text-slate-600 text-[13px] font-medium leading-relaxed border-t border-slate-200 mt-2">
+              Untuk bulan pertama kemitraan, kami menerapkan sistem Cash on Delivery (COD) atau transfer di muka. Setelah penandatanganan kontrak kerja sama bulanan, pembayaran dapat dilakukan dengan termin Net-14 atau Net-30.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-sm overflow-hidden faq-item">
+          <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between p-5 text-left focus:outline-none hover:bg-slate-100 transition-colors cursor-pointer">
+            <span class="font-bold text-[14px] text-slate-800 pr-4">Apakah bisa request jenis sayuran tertentu untuk ditanam?</span>
+            <svg id="faq-chevron-3" class="text-[#4CAF50] shrink-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="faq-body-3" class="hidden transition-all duration-300 ease-in-out">
+            <p class="p-5 pt-0 text-slate-600 text-[13px] font-medium leading-relaxed border-t border-slate-200 mt-2">
+              Sangat bisa! Kami melayani sistem 'Contract Farming' di mana kami akan menanam spesifik sesuai kebutuhan restoran/bisnis Anda dengan komitmen pengambilan tertentu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-12 px-6 bg-slate-50 border-y border-slate-200">
+      <div class="mb-8 text-center">
+        <h2 class="text-2xl font-bold tracking-tight mb-2 text-slate-900">Ulasan Klien</h2>
+        <p class="text-[#4CAF50] text-sm font-medium">Dipercaya oleh berbagai pelaku bisnis kuliner.</p>
+      </div>
+
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 no-scrollbar">
+        <!-- Testi 1 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col gap-5">
+          <div class="flex items-center justify-between">
+            <svg class="text-[#1E5641]" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+            <div class="flex items-center gap-1">
+              <span class="text-[#4CAF50]">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-medium">"Kualitas selada romaine dari PureGreen sangat konsisten. Sangat renyah, daunnya utuh tidak berlubang, dan tahan lama disimpan di chiller. Pasokan selalu tepat waktu setiap pagi."</p>
+          <div class="mt-auto pt-5 border-t border-slate-100 flex flex-col">
+            <span class="text-[14px] font-bold text-slate-800">Chef Junaedi</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] mt-0.5">Head Chef, Resto Bintang</span>
+          </div>
+        </div>
+
+        <!-- Testi 2 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col gap-5">
+          <div class="flex items-center justify-between">
+            <svg class="text-[#1E5641]" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+            <div class="flex items-center gap-1">
+              <span class="text-[#4CAF50]">★★★★★</span>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-medium">"Sayuran hidroponik PureGreen selalu menjadi best-seller di rak fresh produce kami. Packaging rapi, bersih dari akar, dan pelanggan sangat menyukainya."</p>
+          <div class="mt-auto pt-5 border-t border-slate-100 flex flex-col">
+            <span class="text-[14px] font-bold text-slate-800">Siska Amelia</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] mt-0.5">Manager Supermarket Lokal</span>
+          </div>
+        </div>
+
+        <!-- Testi 3 -->
+        <div class="snap-center shrink-0 w-[280px] bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col gap-5">
+          <div class="flex items-center justify-between">
+            <svg class="text-[#1E5641]" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+            <div class="flex items-center gap-1">
+              <span class="text-[#4CAF50]">★★★★☆</span>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-medium">"Sangat membantu operasional cafe kami. Sayur datang sudah dalam keadaan bersih siap potong. Menghemat waktu prep di dapur."</p>
+          <div class="mt-auto pt-5 border-t border-slate-100 flex flex-col">
+            <span class="text-[14px] font-bold text-slate-800">Budi Prakoso</span>
+            <span class="text-[12px] font-medium text-[#4CAF50] mt-0.5">Owner Cafe Senja</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section id="booking-form" class="py-12 px-6 bg-white">
+      <div class="bg-white border border-[#4CAF50]/30 rounded-[2rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-50 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="relative z-10 mb-8 text-center">
+          <h2 class="text-2xl font-bold text-slate-900 mb-2">Ajukan Permintaan Suplai</h2>
+          <p class="text-[#4CAF50] text-[14px] leading-relaxed font-medium">Dapatkan penawaran harga grosir terbaik untuk bisnis Anda.</p>
+        </div>
+        
+        <form onsubmit="handleFormSubmit(event)" class="flex flex-col gap-4 relative z-10">
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide ml-1">Nama Pemesan</label>
+            <input type="text" name="name" required placeholder="Cth: Bpk. Andi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all" />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide ml-1">Nama Usaha / Restoran</label>
+            <input type="text" name="business" required placeholder="Cth: Warung Makan Sehat" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all" />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide ml-1">Alamat Pengiriman</label>
+            <input type="text" name="address" required placeholder="Cth: Jl. Sudirman No.10" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide ml-1">Pilihan Sayur</label>
+              <select name="vegType" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 focus:outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all">
+                <option value="" disabled selected class="text-slate-400">Pilih...</option>
+                <option value="Selada Romaine">Selada Romaine</option>
+                <option value="Pakcoy">Pakcoy Green</option>
+                <option value="Selada Kriting">Selada Kriting</option>
+                <option value="Campur (Mix)">Campur (Mix)</option>
+                <option value="Lainnya">Lainnya (Bisa diinfo via WA)</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide ml-1">Estimasi Kebutuhan</label>
+              <input type="number" name="volume" min="1" required placeholder="Kg / Minggu" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#4CAF50] focus:ring-1 focus:ring-[#4CAF50] transition-all" />
+            </div>
+          </div>
+
+          <button type="submit" class="w-full mt-4 bg-[#4CAF50] text-white font-bold text-sm tracking-wide py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#3d8c40] transition-colors shadow-[0_4px_14px_rgba(76,175,80,0.2)] cursor-pointer">
+            Kirim via WhatsApp
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="text-white">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="pt-8 pb-12 text-center flex flex-col items-center justify-center bg-slate-50 border-t border-slate-200">
+      <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4 border border-slate-200 shadow-sm overflow-hidden p-2">
+        <img src="./logo.png" alt="PureGreen Logistik" class="w-full h-full object-contain" />
+      </div>
+      <div class="flex flex-col gap-1 items-center px-6">
+        <span class="font-extrabold text-[#4CAF50] text-lg tracking-wide">PureGreen Logistik</span>
+        <span class="text-slate-500 text-xs mt-1 font-medium max-w-[280px]">Kawasan Pertanian Modern, Jl. Agrikultur No. 12, Palangka Raya, Kalimantan Tengah.</span>
+      </div>
+      <p class="text-slate-400 text-[12px] mt-8 mb-2 font-medium">
+        © 2026 PureGreen Logistik. All rights reserved.
+      </p>
+      <a 
+        href="https://www.solusilokal.id" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-slate-400 text-[10px] tracking-wide font-medium hover:text-[#4CAF50] transition-colors mt-2"
+      >
+        powered by solusilokal.id
+      </a>
+    </footer>
+
+    <!-- STICKY CTA -->
+    <div id="stickyCTA" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-[432px] z-40 transition-all duration-500 ease-out translate-y-24 opacity-0 pointer-events-none">
+      <button onclick="scrollToEl('booking-form')" class="w-full flex items-center justify-between px-5 py-3.5 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl text-slate-900 shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:bg-slate-50 active:scale-[0.98] transition-all cursor-pointer">
+        <div class="flex flex-col text-left">
+          <span class="font-bold text-sm text-slate-900">Pesan Pasokan Sayur</span>
+          <span class="text-[11px] font-medium text-[#4CAF50] mt-0.5">Diskon untuk kemitraan</span>
+        </div>
+        <div class="bg-[#4CAF50] text-white p-2.5 rounded-xl shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        </div>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- SHARE MODAL -->
+  <div id="shareModal" class="hidden fixed inset-0 z-50 flex items-end justify-center bg-slate-900/40 backdrop-blur-sm sm:items-center transition-opacity" onclick="toggleShareModal(false)">
+    <div class="w-full max-w-[480px] bg-white border-t border-slate-200 sm:border sm:rounded-3xl rounded-t-3xl p-6 relative overflow-hidden" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-slate-900 font-bold text-[16px]">Bagikan PureGreen Logistik</h3>
+        <button onclick="toggleShareModal(false)" class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-all cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="flex overflow-x-auto gap-4 pb-2 no-scrollbar px-1 mb-4">
+        <div class="flex flex-col items-center gap-2 min-w-[75px]">
+          <button id="copyBtn" onclick="copyLink()" class="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-slate-700 hover:bg-slate-100 transition-all border border-slate-200 shadow-sm cursor-pointer">
+            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+          <span id="copyText" class="text-[12px] font-semibold text-slate-500 text-center">Salin Tautan</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 min-w-[75px]">
+          <button onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank')" class="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-100 transition-all shadow-sm cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </button>
+          <span class="text-[12px] font-semibold text-slate-500 text-center">X</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 min-w-[75px]">
+          <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-14 h-14 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:brightness-110 transition-all shadow-sm cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </button>
+          <span class="text-[12px] font-semibold text-slate-500 text-center">Facebook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollToEl(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Scroll listener for sticky CTA
+    window.addEventListener('scroll', () => {
+      const cta = document.getElementById('stickyCTA');
+      if (window.scrollY > 300) {
+        cta.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        cta.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        cta.classList.remove('translate-y-0', 'opacity-100');
+        cta.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }
+    });
+
+    // FAQ Accordion
+    let currentFaq = null;
+    function toggleFaq(index) {
+      for (let i = 0; i < 4; i++) {
+        const body = document.getElementById('faq-body-' + i);
+        const chevron = document.getElementById('faq-chevron-' + i);
+        if (i === index && currentFaq !== index) {
+          body.classList.remove('hidden');
+          chevron.classList.add('rotate-180');
+        } else {
+          body.classList.add('hidden');
+          chevron.classList.remove('rotate-180');
+        }
+      }
+      currentFaq = currentFaq === index ? null : index;
+    }
+
+    // Share Modal
+    function toggleShareModal(show) {
+      const modal = document.getElementById('shareModal');
+      if (show) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href);
+      const copyText = document.getElementById('copyText');
+      const copyBtn = document.getElementById('copyBtn');
+      copyText.textContent = 'Tersalin!';
+      copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      setTimeout(() => {
+        copyText.textContent = 'Salin Tautan';
+        copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+      }, 2000);
+    }
+
+    // Form Submit WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value;
+      const business = form.business.value;
+      const address = form.address.value;
+      const vegType = form.vegType.value;
+      const volume = form.volume.value;
+
+      const text = "Halo Tim Sales *PureGreen Logistik*,\\n\\nSaya tertarik untuk memesan pasokan sayur hidroponik. Berikut detail kebutuhan saya:\\n\\n👤 Nama: " + name + "\\n🏢 Nama Usaha: " + business + "\\n📍 Alamat Pengiriman: " + address + "\\n🥬 Pilihan Sayur: " + vegType + "\\n📦 Estimasi Kebutuhan: " + volume + " kg/minggu\\n\\nMohon informasi ketersediaan stok dan penawaran harganya. Terima kasih.";
+      const waUrl = "https://wa.me/6289529605601?text=" + encodeURIComponent(text);
+      window.open(waUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
